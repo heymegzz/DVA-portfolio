@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meghna | Tableau Public Portfolio</title>
+    <title>Meghna Nair | Data Analyst Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -11,20 +12,20 @@
         :root {
             --tableau-blue: #1F77B4;
             --tableau-orange: #E8762B;
-            --page-bg: #F4F4F4;
+            --page-bg: #F8FAFC;
             --card-bg: #FFFFFF;
-            --top-bar-bg: #1B2631;
-            --text-primary: #1A1A1A;
-            --text-secondary: #666666;
-            --text-muted: #999999;
-            --border: #DEDEDE;
-            --hover-bg: #EBF4FB;
-            --tag-bg: #EAF3FB;
+            --top-bar-bg: #0F172A;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-muted: #94A3B8;
+            --border: #E2E8F0;
+            --hover-bg: #F1F5F9;
+            --tag-bg: #F1F5F9;
             --tag-text: #1F77B4;
-            --blue-expert: #08306B;
-            --blue-advanced: #2171B5;
-            --blue-proficient: #6BAED6;
-            --blue-basic: #C6DBEF;
+            --contribution-low: #E2E8F0;
+            --contribution-med: #93C5FD;
+            --contribution-high: #3B82F6;
+            --contribution-vhigh: #1E3A8A;
         }
 
         * {
@@ -204,55 +205,79 @@
             flex: 45;
         }
 
-        /* --- HIGHLIGHT TABLE --- */
-        .highlight-table-container {
-            width: 100%;
+        /* --- PILL SKILLS --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .skill-pill {
+            padding: 6px 16px;
             border: 1px solid var(--border);
-        }
-
-        .ht-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            background: #fcfcfc;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .ht-header div {
-            padding: 8px 12px;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        .ht-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .ht-row:last-child { border-bottom: none; }
-
-        .ht-cell {
-            padding: 8px 12px;
+            border-radius: 20px;
             font-size: 13px;
+            color: var(--text-primary);
+            background: white;
+            transition: all 0.2s;
+        }
+
+        .skill-pill:hover {
+            border-color: var(--tableau-blue);
+            color: var(--tableau-blue);
+            background: var(--hover-bg);
+        }
+
+        /* --- CONTRIBUTION CHART --- */
+        .contribution-section {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            width: 100%;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(53, 1fr);
+            gap: 2px;
+            margin-top: 12px;
+            width: 100%;
+        }
+
+        .chart-cell {
+            aspect-ratio: 1;
+            border-radius: 1px;
+            background: var(--contribution-low);
+        }
+
+        .cell-med { background: var(--contribution-med); }
+        .cell-high { background: var(--contribution-high); }
+        .cell-vhigh { background: var(--contribution-vhigh); }
+
+        .chart-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .contact-item {
             display: flex;
             align-items: center;
-            border-right: 1px solid var(--border);
+            gap: 6px;
         }
-
-        .ht-cell:last-child { border-right: none; }
-
-        .ht-level {
-            color: white;
-            font-weight: 600;
-            justify-content: center;
-        }
-
-        /* Level Colors */
-        .lvl-expert { background-color: var(--blue-expert); }
-        .lvl-advanced { background-color: var(--blue-advanced); }
-        .lvl-proficient { background-color: var(--blue-proficient); }
 
         /* --- PROJECTS PANEL --- */
         #projects-panel {
@@ -520,44 +545,55 @@
     <!-- INTRO PANEL -->
     <section id="intro-panel">
         <div class="intro-left">
-            <h1 class="intro-name">Meghna</h1>
+            <h1 class="intro-name">Meghna Nair</h1>
             <p class="intro-title">Data Analyst · Visualization Specialist</p>
-            <p class="intro-bio">Specialist in translating complex datasets into interactive storytelling dashboards. Committed to data integrity and executive-ready business intelligence.</p>
+            <p class="intro-bio">Data Visualization & Analytics professional with 1+ year of experience. Expert in building data-driven stories through interactive dashboards and ETL pipelines. Focused on transforming complex datasets into actionable business intelligence.</p>
             
+            <div class="contact-info">
+                <div class="contact-item">📍 Jaipur, Rajasthan</div>
+                <div class="contact-item">📞 +91 9694821580</div>
+                <div class="contact-item">✉️ meghnanair7569@gmail.com</div>
+            </div>
+
             <div class="stats-row">
                 <div class="stat-block">
-                    <span class="stat-number" data-target="12">0</span>
-                    <span class="stat-label">Projects Published</span>
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Core Projects</span>
                 </div>
                 <div class="stat-block">
-                    <span class="stat-number" data-target="8">0</span>
-                    <span class="stat-label">Tools Used</span>
+                    <span class="stat-number" data-target="18">0</span>
+                    <span class="stat-label">Tools & Tech</span>
                 </div>
                 <div class="stat-block">
-                    <span class="stat-number" data-target="45">0</span>
-                    <span class="stat-label">Datasets Analyzed</span>
-                </div>
-                <div class="stat-block">
-                    <span class="stat-number" data-target="1402">0</span>
+                    <span class="stat-number" data-target="780">0</span>
                     <span class="stat-label">Contributions</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number" data-target="1">0</span>
+                    <span class="stat-label">Year Exp</span>
                 </div>
             </div>
 
             <div class="intro-actions">
-                <a href="#" class="btn btn-outline">View Resume</a>
-                <a href="#" class="btn btn-solid">Connect on LinkedIn</a>
+                <a href="https://drive.google.com/file/d/1ctroCThfRHukrh1CyMbzOLw2GfYhJf-3/view?usp=sharing" target="_blank" class="btn btn-outline">View Resume</a>
+                <a href="https://www.linkedin.com/in/meghna-nair-159458227/" target="_blank" class="btn btn-solid">Connect on LinkedIn</a>
             </div>
         </div>
 
         <div class="intro-right">
-            <div class="highlight-table-container">
-                <div class="ht-header">
-                    <div>Tool</div>
-                    <div style="text-align:center">Level</div>
-                    <div style="text-align:center">Projects</div>
-                </div>
-                <div id="skills-table">
+            <span class="skill-group-title">Key Skills</span>
+            <div class="skills-container" id="skills-list">
+                <!-- JS will populate this -->
+            </div>
+
+            <div class="contribution-section">
+                <span class="skill-group-title">780 contributions in the last year</span>
+                <div class="chart-grid" id="contribution-chart">
                     <!-- JS will populate this -->
+                </div>
+                <div class="chart-footer">
+                    <span>May 2025</span>
+                    <span>Less • • • • More</span>
                 </div>
             </div>
         </div>
@@ -571,7 +607,6 @@
                 <div class="filter-tab active" data-filter="All">All</div>
                 <div class="filter-tab" data-filter="Python">Python</div>
                 <div class="filter-tab" data-filter="Tableau">Tableau</div>
-                <div class="filter-tab" data-filter="SQL">SQL</div>
                 <div class="filter-tab" data-filter="Excel">Excel</div>
             </div>
         </div>
@@ -591,137 +626,91 @@
 
     <script>
         /* --- DATA --- */
-        const skills = [
-            { tool: 'Python', level: 'Expert', class: 'lvl-expert', count: 8 },
-            { tool: 'SQL', level: 'Expert', class: 'lvl-expert', count: 12 },
-            { tool: 'Tableau', level: 'Advanced', class: 'lvl-advanced', count: 15 },
-            { tool: 'Excel', level: 'Advanced', class: 'lvl-advanced', count: 20 },
-            { tool: 'Looker Studio', level: 'Proficient', class: 'lvl-proficient', count: 5 },
-            { tool: 'Power BI', level: 'Proficient', class: 'lvl-proficient', count: 4 }
-        ];
+        const skills = ['Excel', 'Looker Studio', 'Tableau', 'Python', 'SQL', 'Pandas', 'Matplotlib', 'Seaborn', 'NumPy'];
 
         const projects = [
             {
-                id: 7,
-                title: 'Amazon E-Commerce Analytics',
-                tool: 'Excel',
-                desc: 'Dashboard for 42K+ product records.',
-                stats: '10K rows · $163 Avg · 4.45 Rating',
-                longDesc: 'Processed and analyzed 42K+ product records using Google Sheets for data cleaning, transformation, and feature engineering. Built an interactive KPI dashboard tracking price, rating, reviews, and monthly demand.',
-                findings: [
-                    'Identified key demand drivers: ratings (>4.0), reviews, and discount pricing.',
-                    'Found ~2× higher sales for sponsored products.',
-                    'Identified 20–40% potential demand uplift via promotions.',
-                    '~30% revenue recovery potential from improving product availability.'
-                ],
-                image: 'assets/amazon_analytics.jpg',
-                link: 'https://github.com/Crunchymon/DVA_CapStone_Amazon_Electronics_Sales'
-            },
-            {
-                id: 8,
+                id: 5,
                 title: 'NYC Airbnb Market Analysis',
-                tool: 'Python',
+                tool: 'Python, Tableau',
                 desc: 'ETL pipeline and Tableau market analysis.',
                 stats: '49K rows · $890M Rev · 221 Neighborhoods',
                 longDesc: 'Built Python-based ETL pipeline to process 48.8K+ listings. Designed Tableau dashboards analyzing potential revenue and spatial distribution across NYC. Performed statistical analysis revealing price-demand independence.',
                 findings: [
                     '15–25% yield improvement via outer-borough investments.',
                     '8–12% revenue uplift via dynamic pricing.',
-                    '5–10% conversion gain by removing dormant listings.',
-                    'Identified 6.2× seasonal demand spike in summer.'
+                    '6.2× seasonal demand spike identified.',
+                    '5–10% conversion gain by removing dormant listings.'
                 ],
                 image: 'assets/nyc_airbnb.png',
-                link: 'https://github.com/heymegzz/E_G18_NYCAirbnbAnalysis'
-            },
-            {
-                id: 1,
-                title: 'Revenue Leakage Analysis',
-                tool: 'Python',
-                desc: 'Identifying pricing anomalies across 14 SKUs.',
-                stats: '840K rows · 3 weeks · 40% saved',
-                longDesc: 'A deep dive into transaction logs to identify systematic pricing errors and inventory mismatches. Used isolation forests for anomaly detection.',
-                findings: ['Recovered $2.3M in annual revenue.', 'Automated weekly audit reports.', 'Identified 3 underperforming regions.'],
-                svg: `<svg width="180" height="100" viewBox="0 0 180 100">
-                        <line x1="10" y1="90" x2="170" y2="90" class="axis"/>
-                        <rect x="20" y="50" width="20" height="40" fill="#1F77B4"/>
-                        <rect x="50" y="30" width="20" height="60" fill="#1F77B4"/>
-                        <rect x="80" y="45" width="20" height="45" fill="#1F77B4"/>
-                        <rect x="110" y="10" width="20" height="80" fill="#1F77B4"/>
-                        <rect x="140" y="35" width="20" height="55" fill="#1F77B4"/>
-                      </svg>`
-            },
-            {
-                id: 2,
-                title: 'Customer Retention Dashboard',
-                tool: 'Tableau',
-                desc: 'Behavioral segmentation of 50K users.',
-                stats: '50K MAU · 2 months · 18% churn',
-                longDesc: 'Interactive Tableau dashboard used by retention teams to track user behavior cohorts and trigger intervention campaigns.',
-                findings: ['Identified top 3 churn signals.', 'Reduced churn rate by 18% in Q3.', 'Optimized marketing spend per cohort.'],
-                svg: `<svg width="180" height="100" viewBox="0 0 180 100">
-                        <line x1="10" y1="90" x2="170" y2="90" class="axis"/>
-                        <polyline points="10,80 40,60 70,70 100,30 130,40 170,10" fill="none" stroke="#1F77B4" stroke-width="2"/>
-                        <polyline points="10,70 40,80 70,50 100,60 130,20 170,30" fill="none" stroke="#E8762B" stroke-width="2"/>
-                      </svg>`
-            },
-            {
-                id: 3,
-                title: 'Supply Chain Optimization',
-                tool: 'SQL',
-                desc: 'Warehouse efficiency metrics for 120 nodes.',
-                stats: '12M rows · 4 weeks · 67% speed',
-                longDesc: 'Complex SQL window functions and query optimization on BigQuery to track real-time delivery performance.',
-                findings: ['Reduced query runtime by 67%.', 'Pinpointed bottleneck at Node 42.', 'Automated warehouse replenishment.'],
-                svg: `<svg width="180" height="100" viewBox="0 0 180 100">
-                        <circle cx="30" cy="70" r="4" fill="#1F77B4"/>
-                        <circle cx="60" cy="40" r="8" fill="#1F77B4"/>
-                        <circle cx="90" cy="60" r="5" fill="#1F77B4"/>
-                        <circle cx="120" cy="20" r="10" fill="#1F77B4"/>
-                        <circle cx="150" cy="50" r="6" fill="#1F77B4"/>
-                      </svg>`
+                github: 'https://github.com/heymegzz/E_G18_NYCAirbnbAnalysis'
             },
             {
                 id: 4,
-                title: 'Financial Forecasting Model',
+                title: 'Amazon E-Commerce Analytics',
                 tool: 'Excel',
-                desc: 'P&L automation with Power Query.',
-                stats: '8 centers · 1 week · 22h saved',
-                longDesc: 'End-to-end automated financial reporting system replacing 22 hours of manual data entry per month.',
-                findings: ['99.2% accuracy achieved.', 'Standardized 8 cost center inputs.', 'Real-time budget variance tracking.'],
-                svg: `<svg width="180" height="100" viewBox="0 0 180 100">
-                        <path d="M10,90 Q40,60 70,80 T130,40 T170,50 L170,90 L10,90 Z" fill="#1F77B4" fill-opacity="0.25"/>
-                        <path d="M10,90 Q40,60 70,80 T130,40 T170,50" fill="none" stroke="#1F77B4" stroke-width="2"/>
-                      </svg>`
+                desc: 'Dashboard for 42K+ product records.',
+                stats: '10K rows · $163 Avg · 4.45 Rating',
+                longDesc: 'Processed and analyzed 42K+ product records using Google Sheets for data cleaning, transformation, and feature engineering. Built an interactive KPI dashboard tracking price, rating, reviews, and monthly demand.',
+                findings: [
+                    'Identified key demand drivers: ratings (>4.0) and reviews.',
+                    'Found ~2× higher sales for sponsored products.',
+                    '20–40% potential demand uplift via promotions.',
+                    '~30% revenue recovery potential identified.'
+                ],
+                image: 'assets/amazon_analytics.jpg',
+                github: 'https://github.com/Crunchymon/DVA_CapStone_Amazon_Electronics_Sales'
             },
             {
-                id: 5,
-                title: 'Market Share Distribution',
-                tool: 'Tableau',
-                desc: 'Visualizing regional competitor dominance.',
-                stats: '5 channels · 2 weeks · $340K spend',
-                longDesc: 'A multi-channel marketing spend analysis dashboard used to reallocate budget toward high-ROAS segments.',
-                findings: ['Identified affiliate channel dominance.', 'Cut waste in paid social by 14%.', 'Unified 5 data streams.'],
-                svg: `<svg width="180" height="100" viewBox="0 0 180 100">
-                        <circle cx="90" cy="50" r="40" stroke="#1F77B4" stroke-width="8" fill="none" stroke-dasharray="180 251"/>
-                        <circle cx="90" cy="50" r="40" stroke="#E8762B" stroke-width="8" fill="none" stroke-dasharray="71 251" stroke-dashoffset="-180"/>
-                      </svg>`
-            },
-            {
-                id: 6,
-                title: 'Inventory Heatmap Analysis',
+                id: 1,
+                title: 'Earmark.ai',
                 tool: 'Python',
-                desc: 'Stock-out prediction across 1.2K items.',
-                stats: '1.2K items · 3 weeks · 92% accuracy',
-                longDesc: 'Predictive model built in Python to anticipate inventory stock-outs before they impact sales volume.',
-                findings: ['92% prediction accuracy.', 'Reduced stock-outs by 30%.', 'Integrated with procurement API.'],
-                svg: `<svg width="180" height="100" viewBox="0 0 180 100">
-                        <rect x="20" y="20" width="20" height="30" fill="#1F77B4"/>
-                        <rect x="42" y="20" width="20" height="30" fill="#E8762B"/>
-                        <rect x="20" y="52" width="20" height="30" fill="#E8762B"/>
-                        <rect x="42" y="52" width="20" height="30" fill="#1F77B4"/>
-                        <rect x="70" y="20" width="20" height="30" fill="#1F77B4"/>
-                        <rect x="92" y="20" width="20" height="30" fill="#1F77B4"/>
-                      </svg>`
+                desc: 'Fraud detection platform with XGBoost & LangGraph.',
+                stats: '0.90 AUC · RAG retrieval · LLaMA 3.1',
+                longDesc: 'Fraud detection platform combining XGBoost and Isolation Forest with SHAP TreeExplainer to generate feature-level explainability for every flagged transaction. Powered by a 3-node LangGraph agent with ChromaDB RAG retrieval and Groq LLaMA 3.1 that auto-generates compliance audit reports.',
+                findings: [
+                    'Achieved AUC above 0.90 on imbalanced financial data.',
+                    'Feature-level explainability for every flagged transaction.',
+                    'Auto-generated audit reports grounded in fraud evidence.',
+                    'Integrated ChromaDB for high-speed RAG retrieval.'
+                ],
+                image: 'assets/earmark.png',
+                link: 'https://earmark-ai.vercel.app/',
+                github: 'https://github.com/heymegzz/earmark.ai'
+            },
+            {
+                id: 2,
+                title: 'Autopsy-AI',
+                tool: 'Python',
+                desc: 'Startup failure analysis engine using LLaMA 3 70B.',
+                stats: '8 Taxonomies · 5-node Graph · Live Search',
+                longDesc: 'Startup failure analysis engine using LLaMA 3 70B via Groq that classifies startup deaths across 8 failure taxonomies. Built a 5-node LangGraph workflow handling cause classification, event extraction, dimensional scoring, and verdict generation.',
+                findings: [
+                    'Deterministic JSON output for failure taxonomy.',
+                    'Dual-retrieval grounding via ChromaDB and Tavily search.',
+                    'Quantitative scoring across 5 key dimensions.',
+                    'Real-time event extraction from web data.'
+                ],
+                image: 'assets/autopsy.png',
+                link: 'https://autopsy-ai-eight.vercel.app/',
+                github: 'https://github.com/heymegzz/autopsy-ai'
+            },
+            {
+                id: 3,
+                title: 'ChurnIQ',
+                tool: 'Python',
+                desc: 'Predicting player churn with Random Forest & RAG.',
+                stats: 'FAISS · Streamlit · LLaMA 3.1',
+                longDesc: 'Agentic AI platform to predict and prevent player churn using a Random Forest classifier. Implements a RAG pipeline using FAISS and HuggingFace local embeddings with Groq LLaMA 3.1, deployed as an interactive multi-tab Streamlit dashboard.',
+                findings: [
+                    'Multi-node workflow for dynamic retention blueprints.',
+                    'Real-time model training and dataset exploration.',
+                    'Interactive Streamlit dashboard for stakeholder use.',
+                    'High-accuracy player behavior prediction.'
+                ],
+                image: 'assets/churniq.png',
+                link: 'https://churniq-bxfx3ucjbzptzd6ayupadj.streamlit.app/',
+                github: 'https://github.com/VanshSharma88/ChurnIQ'
             }
         ];
 
@@ -729,22 +718,33 @@
         window.onload = () => {
             renderSkills();
             renderProjects();
+            renderChart();
             startCounters();
         };
 
-        /* --- SKILLS TABLE --- */
+        /* --- SKILLS LIST --- */
         function renderSkills() {
-            const container = document.getElementById('skills-table');
+            const container = document.getElementById('skills-list');
             skills.forEach(s => {
-                const row = document.createElement('div');
-                row.className = 'ht-row';
-                row.innerHTML = `
-                    <div class="ht-cell">${s.tool}</div>
-                    <div class="ht-cell ht-level ${s.class}">${s.level}</div>
-                    <div class="ht-cell" style="justify-content:center">${s.count}</div>
-                `;
-                container.appendChild(row);
+                const pill = document.createElement('div');
+                pill.className = 'skill-pill';
+                pill.textContent = s;
+                container.appendChild(pill);
             });
+        }
+
+        /* --- CONTRIBUTION CHART --- */
+        function renderChart() {
+            const chart = document.getElementById('contribution-chart');
+            for (let i = 0; i < 371; i++) { // 53 weeks * 7 days
+                const cell = document.createElement('div');
+                cell.className = 'chart-cell';
+                const rand = Math.random();
+                if (rand > 0.9) cell.classList.add('cell-vhigh');
+                else if (rand > 0.7) cell.classList.add('cell-high');
+                else if (rand > 0.4) cell.classList.add('cell-med');
+                chart.appendChild(cell);
+            }
         }
 
         /* --- PROJECTS GRID --- */
@@ -803,12 +803,13 @@
                 const filter = tab.dataset.filter;
                 const cards = document.querySelectorAll('.project-card');
                 cards.forEach(c => {
-                    if (filter === 'All' || c.dataset.tool === filter) {
+                    const tools = c.querySelector('.tool-tag').textContent;
+                    if (filter === 'All' || tools.includes(filter)) {
+                        c.style.display = 'block';
                         c.style.opacity = '1';
-                        c.style.pointerEvents = 'auto';
                     } else {
-                        c.style.opacity = '0.15';
-                        c.style.pointerEvents = 'none';
+                        c.style.display = 'none';
+                        c.style.opacity = '0';
                     }
                 });
             };
@@ -833,7 +834,10 @@
                 <ul class="drawer-list">
                     ${p.findings.map(f => `<li>${f}</li>`).join('')}
                 </ul>
-                <a href="${p.link || '#'}" target="_blank" class="drawer-link">Open Project &rarr;</a>
+                <div style="display: flex; gap: 12px;">
+                    ${p.link ? `<a href="${p.link}" target="_blank" class="drawer-link">Live Demo &rarr;</a>` : ''}
+                    <a href="${p.github || '#'}" target="_blank" class="drawer-link">GitHub Repo &rarr;</a>
+                </div>
             `;
             document.getElementById('drawer').classList.add('open');
         }
